@@ -1,6 +1,4 @@
 from math import sin, cos, pi, sqrt, ceil
-from typing import List
-
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 from scipy import integrate
@@ -12,16 +10,16 @@ STEP = 0  # start step (useful to resume long computations)
 
 c = 299_792_458  # speed of light, m/s
 N_EMITTERS = 3 * 15  # number of emitters
-A_max: List[float] = [1 / N_EMITTERS for _ in range(N_EMITTERS)]  # amplitude per emitter
+A_max = [1 / N_EMITTERS for _ in range(N_EMITTERS)]  # amplitude per emitter
 
 # wavelengths (m)
-wavelengths: List[float] = [700e-9 for _ in range(N_EMITTERS)]  # 700 nm (red)
+wavelengths = [700e-9 for _ in range(N_EMITTERS)]  # 700 nm (red)
 
 # frequencies (Hz)
-freqs: List[float] = [c / wl for wl in wavelengths]
+freqs = [c / wl for wl in wavelengths]
 
 # distance from emitters to screen (m)
-dist_to_screen: List[float] = [20.0 for _ in range(N_EMITTERS)]
+dist_to_screen = [20.0 for _ in range(N_EMITTERS)]
 
 # --- geometry: concentric arrangement with rotated polygons ---
 N_ANGLE = 3  # number of vertices in the polygon (triangle, etc.)
@@ -150,4 +148,5 @@ def draw_rect():
 
 
 if __name__ == "__main__":
+
     draw_rect()
